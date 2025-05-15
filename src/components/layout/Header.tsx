@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+const socialLinks = [
+  { href: 'https://github.com/vishnueturi', label: 'GitHub', icon: '🐙' },
+  { href: 'https://linkedin.com/in/your-linkedin', label: 'LinkedIn', icon: '🔗' },
+  { href: 'mailto:eturivishnu@gmail.com', label: 'Email', icon: '✉️' },
+];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -10,25 +16,34 @@ export function Header() {
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-foreground/10 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold">
-          Portfolio
+          Vishnu Eturi
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/about" className="hover:text-primary-light transition-colors">
-            About
-          </Link>
-          <Link href="/projects" className="hover:text-primary-light transition-colors">
-            Projects
-          </Link>
-          <Link href="/contact" className="hover:text-primary-light transition-colors">
-            Contact
-          </Link>
+          <Link href="/" className="hover:text-primary-light transition-colors">Home</Link>
+          <Link href="/about" className="hover:text-primary-light transition-colors">About</Link>
+          <Link href="/projects" className="hover:text-primary-light transition-colors">Projects</Link>
+          <Link href="/contact" className="hover:text-primary-light transition-colors">Contact</Link>
+          <a href="/resume.pdf" className="hover:text-primary-light transition-colors" target="_blank" rel="noopener noreferrer">Resume</a>
+          <div className="flex items-center gap-2 ml-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-lg hover:text-primary-light transition-colors"
+              >
+                <span aria-hidden>{link.icon}</span>
+              </a>
+            ))}
+          </div>
           <button
-            className="p-2 rounded-lg hover:bg-foreground/5 transition-colors"
+            className="p-2 rounded-lg hover:bg-foreground/5 transition-colors ml-2"
             aria-label="Toggle theme"
           >
-            {/* Theme toggle icon will be added here */}
             🌙
           </button>
         </nav>
@@ -58,27 +73,25 @@ export function Header() {
       >
         <nav className="container mx-auto px-4 py-4">
           <div className="flex flex-col gap-4">
-            <Link
-              href="/about"
-              className="hover:text-primary-light transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/projects"
-              className="hover:text-primary-light transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-primary-light transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            <Link href="/" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link href="/about" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link href="/projects" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+            <Link href="/contact" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            <a href="/resume.pdf" className="hover:text-primary-light transition-colors py-2" target="_blank" rel="noopener noreferrer">Resume</a>
+            <div className="flex items-center gap-3 mt-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-lg hover:text-primary-light transition-colors"
+                >
+                  <span aria-hidden>{link.icon}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       </div>

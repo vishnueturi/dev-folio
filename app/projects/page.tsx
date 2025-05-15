@@ -1,1 +1,0 @@
-// Projects page (placeholder for GitHub integration)

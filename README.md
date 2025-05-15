@@ -1,5 +1,5 @@
 # dev-folio
-Starter portfolio for Vishnu Eturi
+Developer portfolio
 
 ---
 
