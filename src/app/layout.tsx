@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
         <Header />
-        <main className="flex-grow pt-16">
+        <main className="flex-grow pt-16 mx-auto w-4/5">
           {children}
         </main>
         <Footer />
