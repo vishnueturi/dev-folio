@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import ScrollToTopButton from "@/components/shared/ScrollToTopButton";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Footer />
           <ScrollToTopButton />
         </ThemeProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );
