@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+// import ThemeSwitcher from '../../../components/ThemeSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const socialLinks = [
   { href: 'https://github.com/vishnueturi', label: 'GitHub', icon: '🐙' },
@@ -26,7 +28,7 @@ export function Header() {
           <Link href="/projects" className="hover:text-primary-light transition-colors">Projects</Link>
           <Link href="/contact" className="hover:text-primary-light transition-colors">Contact</Link>
           <a href="/resume.pdf" className="hover:text-primary-light transition-colors" target="_blank" rel="noopener noreferrer">Resume</a>
-          <div className="flex items-center gap-2 ml-4">
+          {/* <div className="flex items-center gap-2 ml-4">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -39,13 +41,8 @@ export function Header() {
                 <span aria-hidden>{link.icon}</span>
               </a>
             ))}
-          </div>
-          <button
-            className="p-2 rounded-lg hover:bg-foreground/5 transition-colors ml-2"
-            aria-label="Toggle theme"
-          >
-            🌙
-          </button>
+          </div> */}
+          <ThemeSwitcher />
         </nav>
 
         {/* Mobile Menu Button */}
@@ -78,7 +75,7 @@ export function Header() {
             <Link href="/projects" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Projects</Link>
             <Link href="/contact" className="hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             <a href="/resume.pdf" className="hover:text-primary-light transition-colors py-2" target="_blank" rel="noopener noreferrer">Resume</a>
-            <div className="flex items-center gap-3 mt-2">
+            {/* <div className="flex items-center gap-3 mt-2">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
@@ -91,7 +88,7 @@ export function Header() {
                   <span aria-hidden>{link.icon}</span>
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </nav>
       </div>

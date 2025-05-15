@@ -34,7 +34,7 @@ export default function Projects() {
   return (
     <Container>
       <section className="pt-16 pb-8">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Projects</h1>
+        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">Projects</h1>
         <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-3xl">
           Here are some of the key projects I have worked on, focusing on scalable, high-performance, and user-friendly web applications.
         </p>
@@ -45,7 +45,7 @@ export default function Projects() {
               className="rounded-xl bg-foreground/5 p-6 text-left shadow-sm hover:shadow-lg transition-shadow border border-foreground/10 flex flex-col justify-between"
             >
               <div>
-                <h2 className="font-semibold text-lg text-white mb-1">{project.title}</h2>
+                <h2 className="font-semibold text-lg text-foreground mb-1">{project.title}</h2>
                 <span className="text-xs text-foreground/60 mb-2 block">{project.period}</span>
                 <p className="text-foreground/70 text-base mb-3">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-2">

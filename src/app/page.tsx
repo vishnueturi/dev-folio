@@ -20,7 +20,7 @@ export default function Home() {
     <Container>
       {/* Hero Section */}
       <section className="min-h-[60vh] flex flex-col justify-center items-start pt-16 pb-12">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-4 tracking-tight">
           Hi, I'm Vishnu Eturi
         </h1>
         <p className="text-lg md:text-2xl text-foreground/70 mb-6 flex flex-wrap gap-x-2 gap-y-1 items-center">
@@ -37,13 +37,13 @@ export default function Home() {
         <div className="flex gap-4 mb-8">
           <a
             href="/projects"
-            className="px-6 py-3 rounded-lg bg-white text-black font-semibold shadow hover:bg-primary-light hover:text-white transition-colors border border-transparent"
+            className="px-6 py-3 rounded-lg bg-foreground text-background font-semibold shadow hover:bg-foreground/80 transition-colors border border-transparent"
           >
             View Projects
           </a>
           <a
             href="/about"
-            className="px-6 py-3 rounded-lg border border-foreground/20 text-white font-semibold hover:bg-foreground/10 transition-colors"
+            className="px-6 py-3 rounded-lg border border-foreground/20 text-foreground font-semibold hover:bg-foreground/10 transition-colors"
           >
             About Me
           </a>
@@ -52,14 +52,14 @@ export default function Home() {
 
       {/* Featured Projects Section */}
       <section className="mb-16">
-        <h2 className="text-xl md:text-2xl font-bold mb-6 text-white">Featured Projects</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-6 text-foreground">Featured Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
               className="rounded-xl bg-foreground/5 p-6 text-left shadow-sm hover:shadow-lg transition-shadow border border-foreground/10"
             >
-              <h3 className="font-semibold text-lg text-white mb-2">{project.title}</h3>
+              <h3 className="font-semibold text-lg text-foreground mb-2">{project.title}</h3>
               <p className="text-foreground/70 text-base">{project.description}</p>
             </div>
           ))}

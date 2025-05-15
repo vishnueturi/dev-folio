@@ -39,12 +39,12 @@ export default function About() {
   return (
     <Container>
       <section className="pt-16 pb-8">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">About Me</h1>
+        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">About Me</h1>
         <p className="text-lg md:text-xl text-foreground/80 mb-6 max-w-3xl">
           I am a skilled Front-End Developer with nearly 5 years of experience in building scalable, high-performance web applications using React.js and other modern frameworks. I focus on accessibility, usability, and cross-browser compatibility, and thrive in agile environments delivering business value through clean code and modern UI.
         </p>
         <div className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-2">Skills & Technologies</h2>
+          <h2 className="text-xl font-bold text-foreground mb-2">Skills & Technologies</h2>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
               <span key={skill} className="bg-primary-light/10 text-primary-light px-3 py-1 rounded-full text-xs font-medium">
@@ -54,13 +54,13 @@ export default function About() {
           </div>
         </div>
         <div>
-          <h2 className="text-xl font-bold text-white mb-4">Experience</h2>
+          <h2 className="text-xl font-bold text-foreground mb-4">Experience</h2>
           <div className="flex flex-col gap-8">
             {experience.map((exp) => (
               <div key={exp.role + exp.period} className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                   <div className="flex flex-col md:flex-row md:items-center gap-2">
-                    <span className="font-semibold text-lg text-white">{exp.role}</span>
+                    <span className="font-semibold text-lg text-foreground">{exp.role}</span>
                     <span className="text-foreground/60">@</span>
                     <a href={exp.website} target="_blank" rel="noopener noreferrer" className="text-primary-light underline font-medium">{exp.company}</a>
                   </div>
