@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ScrollToTopButton from "@/components/shared/ScrollToTopButton";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ScrollToTopButton />
         </ThemeProvider>
       </body>
     </html>
