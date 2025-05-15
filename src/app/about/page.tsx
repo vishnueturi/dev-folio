@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { FaVuejs, FaReact, FaJs, FaHtml5, FaCss3, FaNodeJs, FaDatabase, FaServer, FaTools, FaCode } from 'react-icons/fa';
 import { SiRedux, SiJest, SiWebpack, SiChartdotjs, SiTestinglibrary, SiMongodb } from 'react-icons/si';
+import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const skills = [
   {
@@ -78,53 +79,62 @@ export default function About() {
   return (
     <Container>
       <section className="pt-16 pb-8">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">About Me</h1>
-        <p className="text-lg md:text-xl text-foreground/80 mb-6 max-w-3xl">
+        <ScrollReveal delay={0}>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">About Me</h1>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="text-lg md:text-xl text-foreground/80 mb-6 max-w-3xl">
           Developer with 5+ years of experience in building scalable front-end applications using Vue.js, .NET Core. Expertise in creating responsive, high-performance web applications using JavaScript, HTML, and CSS, with a strong understanding of accessibility, usability principles, and cross-browser compatibility. Proven ability to design and deliver features in an agile environment, with hands-on experience in working across both front-end and back-end technologies.
-        </p>
-        <div className="mb-8">
-          <h2 className="text-xl font-bold text-foreground mb-2">Skills & Technologies</h2>
-          <div className="flex flex-col gap-4">
-            {skills.map((skillCategory) => (
-              <div key={skillCategory.category}>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{skillCategory.category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillCategory.techs.map((tech) => (
-                    <span key={tech.name} className="bg-primary-light/10 text-primary-light px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                      {<tech.icon />} {tech.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2 className="text-xl font-bold text-foreground mb-4">Experience</h2>
-          <div className="flex flex-col gap-8">
-            {experience.map((exp) => (
-              <div key={exp.role + exp.period} className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm transition duration-200 hover:shadow-lg hover:shadow-primary-light">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <div className="flex flex-col md:flex-row md:items-center gap-2">
-                    <span className="font-semibold text-lg text-foreground">{exp.role}</span>
-                    <span className="text-foreground/60">@</span>
-                    <a href={exp.website} target="_blank" rel="noopener noreferrer" className="text-primary-light underline font-medium">{exp.company}</a>
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-foreground mb-2">Skills & Technologies</h2>
+            <div className="flex flex-col gap-4">
+              {skills.map((skillCategory) => (
+                <div key={skillCategory.category}>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{skillCategory.category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skillCategory.techs.map((tech) => (
+                      <span key={tech.name} className="bg-primary-light/10 text-primary-light px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                        {<tech.icon />} {tech.name}
+                      </span>
+                    ))}
                   </div>
-                  <span className="text-sm text-foreground/60">{exp.period} | {exp.location}</span>
                 </div>
-                <ul className="list-disc list-inside text-foreground/80 text-base mt-2 space-y-1">
-                  {exp.details.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="mb-8 mt-8">
-          <h2 className="text-xl font-bold text-foreground mb-2">Education</h2>
-          <div className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm transition duration-200 hover:shadow-lg hover:shadow-primary-light">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+        </ScrollReveal>
+        <ScrollReveal delay={0.3}>
+          <div>
+            <h2 className="text-xl font-bold text-foreground mb-4">Experience</h2>
+            <div className="flex flex-col gap-8">
+              {experience.map((exp) => (
+                <div key={exp.role + exp.period} className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm transition duration-200 hover:shadow-lg hover:shadow-primary-light">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <div className="flex flex-col md:flex-row md:items-center gap-2">
+                      <span className="font-semibold text-lg text-foreground">{exp.role}</span>
+                      <span className="text-foreground/60">@</span>
+                      <a href={exp.website} target="_blank" rel="noopener noreferrer" className="text-primary-light underline font-medium">{exp.company}</a>
+                    </div>
+                    <span className="text-sm text-foreground/60">{exp.period} | {exp.location}</span>
+                  </div>
+                  <ul className="list-disc list-inside text-foreground/80 text-base mt-2 space-y-1">
+                    {exp.details.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.4}>
+          <div className="mb-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-2">Education</h2>
+            <div className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm transition duration-200 hover:shadow-lg hover:shadow-primary-light">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
               <div className="flex flex-col md:flex-row md:items-center gap-2">
                 <span className="font-semibold text-lg text-foreground">Bachelor of Technology</span>
                 <span className="text-foreground/60">in</span>
@@ -136,7 +146,8 @@ export default function About() {
               Vaagdevi Engineering College
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
     </Container>
   );

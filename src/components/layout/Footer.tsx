@@ -27,7 +27,7 @@ export function Footer() {
           ))}
         </div> */}
         <div className="text-center text-foreground/60 text-sm">
-          © {new Date().getFullYear()} Vishnu Eturi. All rights reserved.
+          © {new Date().getFullYear()} All rights reserved.
         </div>
         <div className="text-center text-foreground/60 text-sm">
           Built with <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-light">Next.js</a> &amp; <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-light">Tailwind CSS</a>
