@@ -56,7 +56,7 @@ export function Header() {
           <Link href="/about" className="text-sm relative group hover:text-primary-light transition-colors">About</Link>
           <Link href="/projects" className="text-sm relative group hover:text-primary-light transition-colors">Projects</Link>
           <Link href="/contact" className="text-sm relative group hover:text-primary-light transition-colors">Contact</Link>
-          <a href="/resume.pdf" className="text-sm relative group hover:text-primary-light transition-colors" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="/Vishnu_swe.pdf" className="text-sm relative group hover:text-primary-light transition-colors" target="_blank" rel="noopener noreferrer" download>Resume</a>
           <ThemeSwitcher />
         </nav>
 
@@ -88,7 +88,7 @@ export function Header() {
           <Link href="/about" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link href="/projects" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Projects</Link>
           <Link href="/contact" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-          <a href="/resume.pdf" className="relative group hover:text-primary-light transition-colors py-2" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="/Vishnu_swe.pdf" className="relative group hover:text-primary-light transition-colors py-2" target="_blank" rel="noopener noreferrer" download>Resume</a>
         </nav>
       </div>
     </header>

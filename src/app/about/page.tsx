@@ -1,6 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { FaVuejs, FaReact, FaJs, FaHtml5, FaCss3, FaNodeJs, FaDatabase, FaServer, FaTools, FaCode } from 'react-icons/fa';
-import { SiRedux, SiJest, SiWebpack, SiChartdotjs, SiTestinglibrary, SiMongodb } from 'react-icons/si';
+import { SiRedux, SiJest, SiWebpack, SiChartdotjs, SiTestinglibrary, SiMongodb, SiDotnet } from 'react-icons/si';
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const skills = [
@@ -20,7 +20,7 @@ const skills = [
   {
     category: "Backend",
     techs: [
-      { name: ".NET Core", icon: FaCode },
+      { name: ".NET Core", icon: SiDotnet },
       { name: "RESTful API development", icon: FaServer },
       { name: "MongoDB", icon: SiMongodb },
     ]

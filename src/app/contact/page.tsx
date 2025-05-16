@@ -3,6 +3,8 @@
 import { Container } from "@/components/layout/Container";
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaLinkedin } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,12 +49,24 @@ export default function Contact() {
         <p className="text-lg md:text-xl text-foreground/80 mb-6">
           Interested in working together, have a question, or just want to say hi? Reach out via email, LinkedIn, or the form below.
         </p>
-        <div className="flex items-center gap-4 mb-8">
-          <a href="mailto:eturivishnu@gmail.com" className="underline hover:text-primary-light flex items-center gap-2">
-            📧 eturivishnu@gmail.com
+        <div className="flex items-center gap-6 mb-8">
+          <a 
+            href="mailto:eturivishnu@gmail.com" 
+            className="text-foreground/80 hover:text-red-500 transition-colors flex items-center gap-2 group"
+            aria-label="Email me"
+          >
+            <SiGmail className="w-6 h-6" />
+            <span className="text-foreground/80 group-hover:text-foreground">eturivishnu@gmail.com</span>
           </a>
-          <a href="https://linkedin.com/in/vishnueturi" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-light flex items-center gap-2">
-            🔗 LinkedIn
+          <a 
+            href="https://linkedin.com/in/vishnueturi" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-foreground/80 hover:text-[#0077b5] transition-colors flex items-center gap-2 group"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin className="w-6 h-6" />
+            <span className="text-foreground/80 group-hover:text-foreground">vishnueturi</span>
           </a>
         </div>
         <form className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm flex flex-col gap-4" onSubmit={handleSubmit}>
