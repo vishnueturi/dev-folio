@@ -2,19 +2,33 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-// import ThemeSwitcher from '../../../components/ThemeSwitcher';
+import { ScaleLoader } from 'react-spinners';
 import ThemeSwitcher from '../ThemeSwitcher';
-
-const socialLinks = [
-  { href: 'https://github.com/vishnueturi', label: 'GitHub', icon: '🐙' },
-  { href: 'https://linkedin.com/in/your-linkedin', label: 'LinkedIn', icon: '🔗' },
-  { href: 'mailto:eturivishnu@gmail.com', label: 'Email', icon: '✉️' },
-];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleResumeDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsDownloading(true);
+    
+    // Simulate download delay
+    const link = document.createElement('a');
+    link.href = '/Vishnu_swe.pdf';
+    link.download = 'Vishnu_Eturi_Resume.pdf';
+    link.target = '_blank';
+    
+    // Add a small delay to show the loader
+    setTimeout(() => {
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setIsDownloading(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,20 +57,37 @@ export function Header() {
     };
   }, [lastScrollY]);
 
+  const renderResumeLink = (isMobile = false) => (
+    <a 
+      href="/Vishnu_swe.pdf" 
+      className={`${isMobile ? 'py-2' : 'text-sm'} relative group hover:text-primary-light transition-colors flex items-center gap-1 min-w-[70px]`} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      onClick={handleResumeDownload}
+    >
+      <span className={isDownloading ? 'invisible' : ''}>Resume</span>
+      <div className={`absolute ${isMobile ? 'left-8' : 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'} ${!isDownloading ? 'hidden' : ''}`}>
+        <ScaleLoader 
+          color="currentColor" 
+          height={12} 
+          width={2} 
+          margin={1}
+          loading={isDownloading}
+        />
+      </div>
+    </a>
+  );
+
   return (
     <header className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[calc(100%-40px)] max-w-md bg-background/80 backdrop-blur-sm rounded-xl shadow-lg border border-foreground/10 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
       <div className="container mx-auto px-4 h-14 flex items-center justify-center">
-        {/* <Link href="/" className="text-xl font-bold">
-          Vishnu Eturi
-        </Link> */}
-
-        {/* Desktop Navigation - simplified for card */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
           <Link href="/" className="text-sm relative group hover:text-primary-light transition-colors">Home</Link>
           <Link href="/about" className="text-sm relative group hover:text-primary-light transition-colors">About</Link>
           <Link href="/projects" className="text-sm relative group hover:text-primary-light transition-colors">Projects</Link>
           <Link href="/contact" className="text-sm relative group hover:text-primary-light transition-colors">Contact</Link>
-          <a href="/Vishnu_swe.pdf" className="text-sm relative group hover:text-primary-light transition-colors" target="_blank" rel="noopener noreferrer" download>Resume</a>
+          {renderResumeLink()}
           <ThemeSwitcher />
         </nav>
 
@@ -88,7 +119,7 @@ export function Header() {
           <Link href="/about" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link href="/projects" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Projects</Link>
           <Link href="/contact" className="relative group hover:text-primary-light transition-colors py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-          <a href="/Vishnu_swe.pdf" className="relative group hover:text-primary-light transition-colors py-2" target="_blank" rel="noopener noreferrer" download>Resume</a>
+          {renderResumeLink(true)}
         </nav>
       </div>
     </header>
