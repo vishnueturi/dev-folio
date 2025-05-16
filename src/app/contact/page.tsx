@@ -36,7 +36,6 @@ export default function Contact() {
         toast.error(result.message || 'An unexpected error occurred.');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       toast.error('Failed to submit form.');
     } finally {
       setIsSubmitting(false);

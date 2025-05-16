@@ -1,18 +1,6 @@
 import { Container } from '@/components/layout/Container';
+import { FaVuejs, FaReact, FaJs, FaHtml5, FaCss3, FaServer, FaTools } from 'react-icons/fa';
 import {
-  FaVuejs,
-  FaReact,
-  FaJs,
-  FaHtml5,
-  FaCss3,
-  FaNodeJs,
-  FaDatabase,
-  FaServer,
-  FaTools,
-  FaCode,
-} from 'react-icons/fa';
-import {
-  SiRedux,
   SiJest,
   SiWebpack,
   SiChartdotjs,

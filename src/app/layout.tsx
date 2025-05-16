@@ -6,6 +6,8 @@ import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,11 +37,13 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow pt-20 mx-auto w-4/5 bg-background text-foreground">
             {children}
+            <SpeedInsights />
           </main>
           <Footer />
           <ScrollToTopButton />
         </ThemeProvider>
         <Toaster position="top-center" />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import { Container } from '@/components/layout/Container';
-import { FaReact, FaJs, FaServer, FaDatabase, FaTools, FaCode, FaVuejs } from 'react-icons/fa';
+import { FaJs, FaServer, FaDatabase, FaTools, FaVuejs } from 'react-icons/fa';
 import { SiDotnet } from 'react-icons/si';
 import { BiGitBranch } from 'react-icons/bi'; // For Unit Testing (git branch icon as a placeholder)
 import ScrollReveal from '@/components/shared/ScrollReveal';

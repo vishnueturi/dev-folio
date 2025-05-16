@@ -1,16 +1,9 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { SiNextdotjs, SiTailwindcss, SiGithub, SiLinkedin } from 'react-icons/si';
-import { FaEnvelope } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
-interface SocialLink {
-  name: string;
-  href: string;
-  icon: React.ReactNode;
-  hover: string;
-}
 
 interface TechStackItem {
   name: string;
@@ -18,29 +11,6 @@ interface TechStackItem {
   icon: React.ReactNode;
   hover: string;
 }
-
-const currentYear = new Date().getFullYear();
-
-const socialLinks: SocialLink[] = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com/vishnueturi',
-    icon: <SiGithub className="w-4 h-4" />,
-    hover: 'hover:text-gray-700 dark:hover:text-gray-300',
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com/in/vishnueturi',
-    icon: <SiLinkedin className="w-4 h-4" />,
-    hover: 'hover:text-[#0077b5] dark:hover:text-[#70b5e7]',
-  },
-  {
-    name: 'Email',
-    href: 'mailto:eturivishnu@gmail.com',
-    icon: <FaEnvelope className="w-4 h-4" />,
-    hover: 'hover:text-red-500 dark:hover:text-red-400',
-  },
-];
 
 export function Footer() {
   const { theme } = useTheme();
@@ -68,9 +38,11 @@ export function Footer() {
       name: 'Cursor',
       href: 'https://www.cursor.sh/',
       icon: (
-        <img
+        <Image
           src="/cursor_tool_icon.svg"
           alt="Cursor"
+          width={500}
+          height={500}
           className={`w-4 h-4 ${mounted && isDark ? 'invert' : ''}`}
           onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
             const target = e.target as HTMLImageElement;
@@ -87,26 +59,6 @@ export function Footer() {
     <footer className="border-t border-foreground/10 bg-background/80 backdrop-blur-sm mt-12">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
-          {/* <div className="flex items-center gap-6">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 text-foreground/60 transition-colors ${link.hover}`}
-                aria-label={link.name}
-              >
-                {link.icon}
-                <span className="text-sm font-medium">{link.name}</span>
-              </a>
-            ))}
-          </div> */}
-
-          {/* <div className="flex items-center gap-1 text-sm text-foreground/60">
-            <span>© {currentYear} All rights reserved</span>
-          </div> */}
-
           <div className="flex items-center gap-1 text-sm">
             <span className="text-foreground/60">Built with</span>
             <div className="flex items-center gap-1">
