@@ -2,12 +2,14 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  // useEffect only runs on the client, so we can safeguard against SSR
+  // Ensure the component is mounted before rendering
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -15,12 +17,32 @@ export default function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <button
+    <motion.button
       className="p-2 rounded-lg hover:bg-foreground/5 transition-colors"
       aria-label="Toggle theme"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
+      whileTap={{ scale: 0.9 }}
+      whileHover={{ rotate: 15 }}
     >
-      {theme === 'dark' ? '🌙' : '☀️'}
-    </button>
+      {theme === 'dark' || resolvedTheme === 'dark' ? (
+        <motion.div
+          key="dark-icon"
+          initial={{ opacity: 0, rotate: -90 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          exit={{ opacity: 0, rotate: 90 }}
+        >
+          <MdDarkMode size={24} />
+        </motion.div>
+      ) : (
+        <motion.div
+          key="light-icon"
+          initial={{ opacity: 0, rotate: -90 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          exit={{ opacity: 0, rotate: 90 }}
+        >
+          <MdLightMode size={24} />
+        </motion.div>
+      )}
+    </motion.button>
   );
 }

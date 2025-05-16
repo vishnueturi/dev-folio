@@ -1,26 +1,26 @@
-import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/shared/ScrollToTopButton";
-import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
+import './globals.css';
+import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 const space_grotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
   weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
-  description: "A modern developer portfolio built with Next.js",
+  title: 'Vishnu Eturi',
+  description: 'A modern developer portfolio of Vishnu Eturi built with Next.js',
 };
 
 export default function RootLayout({

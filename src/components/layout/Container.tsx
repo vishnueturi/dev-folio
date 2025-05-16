@@ -4,9 +4,5 @@ interface ContainerProps {
 }
 
 export function Container({ children, className = '' }: ContainerProps) {
-  return (
-    <div className={`mx-[15%] ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`mx-[15%] ${className}`}>{children}</div>;
 }

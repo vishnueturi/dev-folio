@@ -5,19 +5,18 @@ export async function POST(request: Request) {
   const formData = await request.json();
   const { name, email, message } = formData;
 
-
   // Example using a generic SMTP server:
-//   const transporter = nodemailer.createTransport({
-//     host: process.env.SMTP_HOST,
-//     port: parseInt(process.env.SMTP_PORT || '587', 10),
-//     secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
-//     auth: {
-//       user: process.env.SMTP_USER,
-//       pass: process.env.SMTP_PASS,
-//     },
-//   });
-// GMAIL service config
-const transporter = nodemailer.createTransport({
+  //   const transporter = nodemailer.createTransport({
+  //     host: process.env.SMTP_HOST,
+  //     port: parseInt(process.env.SMTP_PORT || '587', 10),
+  //     secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  //     auth: {
+  //       user: process.env.SMTP_USER,
+  //       pass: process.env.SMTP_PASS,
+  //     },
+  //   });
+  // GMAIL service config
+  const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER, // your Gmail address

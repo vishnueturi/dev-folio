@@ -1,6 +1,6 @@
 'use client';
 
-import { Container } from "@/components/layout/Container";
+import { Container } from '@/components/layout/Container';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaLinkedin } from 'react-icons/fa';
@@ -46,23 +46,27 @@ export default function Contact() {
   return (
     <Container>
       <section className="pt-16 pb-8 max-w-2xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">Contact</h1>
-        <p className="text-lg md:text-xl text-foreground/80 mb-6">        
-        You can use below super powers to say hi!
+        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
+          Contact
+        </h1>
+        <p className="text-lg md:text-xl text-foreground/80 mb-6">
+          You can use below super powers to say hi!
         </p>
         <div className="flex items-center gap-6 mb-8">
-          <a 
-            href="mailto:eturivishnu@gmail.com" 
+          <a
+            href="mailto:eturivishnu@gmail.com"
             className="text-foreground/80 hover:text-red-500 transition-colors flex items-center gap-2 group"
             aria-label="Email me"
           >
             <SiGmail className="w-6 h-6" />
-            <span className="text-foreground/80 group-hover:text-foreground">eturivishnu@gmail.com</span>
+            <span className="text-foreground/80 group-hover:text-foreground">
+              eturivishnu@gmail.com
+            </span>
           </a>
-          <a 
-            href="https://linkedin.com/in/vishnueturi" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://linkedin.com/in/vishnueturi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-foreground/80 hover:text-[#0077b5] transition-colors flex items-center gap-2 group"
             aria-label="LinkedIn profile"
           >
@@ -70,9 +74,14 @@ export default function Contact() {
             <span className="text-foreground/80 group-hover:text-foreground">vishnueturi</span>
           </a>
         </div>
-        <form className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form
+          className="bg-foreground/5 rounded-xl p-6 border border-foreground/10 shadow-sm flex flex-col gap-4"
+          onSubmit={handleSubmit}
+        >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
+              Name
+            </label>
             <input
               type="text"
               id="name"
@@ -84,7 +93,9 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -96,7 +107,9 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
+              Message
+            </label>
             <textarea
               id="message"
               name="message"
@@ -115,10 +128,18 @@ export default function Contact() {
           >
             {isSubmitting ? (
               <>
-                <ScaleLoader color="white" height={20} width={2} margin={1} aria-label="Sending message" />
+                <ScaleLoader
+                  color="white"
+                  height={20}
+                  width={2}
+                  margin={1}
+                  aria-label="Sending message"
+                />
                 <span>Sending...</span>
               </>
-            ) : 'Send Message'}
+            ) : (
+              'Send Message'
+            )}
           </button>
         </form>
       </section>

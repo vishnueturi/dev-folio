@@ -32,14 +32,23 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
     font-family: var(--font-sans);
     background-color: var(--background-color);
     color: var(--text-color);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
@@ -62,6 +71,12 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

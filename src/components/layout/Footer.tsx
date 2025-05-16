@@ -68,13 +68,14 @@ export function Footer() {
       name: 'Cursor',
       href: 'https://www.cursor.sh/',
       icon: (
-        <img 
-          src="/cursor_tool_icon.svg" 
-          alt="Cursor" 
+        <img
+          src="/cursor_tool_icon.svg"
+          alt="Cursor"
           className={`w-4 h-4 ${mounted && isDark ? 'invert' : ''}`}
           onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
             const target = e.target as HTMLImageElement;
-            target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWN1cnNvciI+PHBhdGggZD0iTTggMTRhMiAyIDAgMSAwIDAtNCAwIDIgMiAwIDAgMCA0IDBaIi8+PHBhdGggZD0iTTguNCAxNC42YzIuMS0xLjkgNC4yLTMuNiA2LjUtNS4xYTEgMSAwIDAgMCAwLTEuN2MtLjMtLjItLjctLjItMS4xLS4xIi8+PHBhdGggZD0iTTkuMSAxNy4xYy45LS45IDEuOC0xLjkgMi42LTIuOS43LS4xIDEuMy0uMSAxLjkuMS4yLjIuMy41LjMuOGMtLjEuNi0uOSAxLjItMi4xIDIuNCIvPjwvc3ZnPg==';
+            target.src =
+              'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWN1cnNvciI+PHBhdGggZD0iTTggMTRhMiAyIDAgMSAwIDAtNCAwIDIgMiAwIDAgMCA0IDBaIi8+PHBhdGggZD0iTTguNCAxNC42YzIuMS0xLjkgNC4yLTMuNiA2LjUtNS4xYTEgMSAwIDAgMCAwLTEuN2MtLjMtLjItLjctLjItMS4xLS4xIi8+PHBhdGggZD0iTTkuMSAxNy4xYy45LS45IDEuOC0xLjkgMi42LTIuOS43LS4xIDEuMy0uMSAxLjkuMS4yLjIuMy41LjMuOGMtLjEuNi0uOSAxLjItMi4xIDIuNCIvPjwvc3ZnPg==';
           }}
         />
       ),
@@ -84,7 +85,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-foreground/10 bg-background/80 backdrop-blur-sm mt-12">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
           {/* <div className="flex items-center gap-6">
             {socialLinks.map((link) => (
