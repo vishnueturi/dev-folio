@@ -14,13 +14,13 @@ export function Header() {
   const handleResumeDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsDownloading(true);
-    
+
     // Simulate download delay
     const link = document.createElement('a');
-    link.href = '/Vishnu_swe.pdf';
-    link.download = 'Vishnu_Eturi_Resume.pdf';
+    link.href = '/Vishnu_swe.pdf'; // Updated to use Vercel's public folder
+    link.download = 'Vishnu_SWE_Resume.pdf';
     link.target = '_blank';
-    
+
     // Add a small delay to show the loader
     setTimeout(() => {
       document.body.appendChild(link);
@@ -59,7 +59,7 @@ export function Header() {
 
   const renderResumeLink = (isMobile = false) => (
     <a 
-      href="/Vishnu_swe.pdf" 
+      href="https://example.com/path-to-your-cloud-resume.pdf" // Replace with your cloud file URL
       className={`${isMobile ? 'py-2' : 'text-sm'} relative group hover:text-primary-light transition-colors flex items-center gap-1 min-w-[70px]`} 
       target="_blank" 
       rel="noopener noreferrer"

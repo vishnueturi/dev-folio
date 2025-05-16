@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="flex-grow pt-16 mx-auto w-4/5 bg-background text-foreground">
+          <main className="flex-grow pt-20 mx-auto w-4/5 bg-background text-foreground">
             {children}
           </main>
           <Footer />

@@ -47,8 +47,8 @@ export default function Contact() {
     <Container>
       <section className="pt-16 pb-8 max-w-2xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">Contact</h1>
-        <p className="text-lg md:text-xl text-foreground/80 mb-6">
-        Got to say hi! You’ve got the superpowers below.
+        <p className="text-lg md:text-xl text-foreground/80 mb-6">        
+        You can use below super powers to say hi!
         </p>
         <div className="flex items-center gap-6 mb-8">
           <a 
